@@ -28,7 +28,7 @@
 			color: #4e4e4e;
 			text-decoration: underline;
 		}
-		
+
 		.header {
 			text-align:center;
 			font-size: 2em;
@@ -178,7 +178,7 @@
 			{{#basics.profiles}}
 			<p class= "profile"><a href= "{{url}}" target= "_blank" class= "profile">{{network}}</a></p>
 			{{/basics.profiles}}
-		</div>		
+		</div>
 	</div>
 	<div class= "main">
 		{{#aboutBool}}
@@ -281,6 +281,7 @@
 			<h2><i class= "fa fa-star left"></i> INTERESTS</h2>
 			{{#interests}}
 				<h3 class= "skills">{{name}}</h3>
+        <p>{{summary}}</p>
 				{{#keywords}}
 				<span class= "keywords">{{.}}</span>
 				{{/keywords}}
