@@ -140,6 +140,12 @@
 				visibility: visible;
 			}
 		}
+    @media print
+    {
+        .job, .skill, #contact, #education, #interests, p {
+          page-break-inside: avoid;
+        }
+    }
     </style>
 	<script src= "//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
   </head>
@@ -231,10 +237,12 @@
 		<div id= "skills">
 			<h2><i class= "fa fa-tasks left"></i> SKILLS</h2>
 			{{#skills}}
-				<h3 class= "skills">{{name}}</h3>
-				{{#keywords}}
-				<span class= "keywords">{{.}}</span>
-				{{/keywords}}
+        <div class="skill">
+  				<h3 class= "skills">{{name}}</h3>
+  				{{#keywords}}
+  				<span class= "keywords">{{.}}</span>
+  				{{/keywords}}
+        </div>
 			{{/skills}}
 		</div><br>
 		{{/skillsBool}}
