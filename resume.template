@@ -288,6 +288,17 @@
 			{{/interests}}
 		</div>
 		{{/interestsBool}}
+		{{#projectsBool}}
+		<div id= "projects">
+			<h2><i class= "fa fa-gamepad left"></i> INTERESTS</h2>
+			{{#projects}}
+        <a href="{{url}}" target="_blank">
+  				<h3 class= "skills">{{name}}</h3>
+        </a>
+        <p>{{summary}}</p>
+			{{/projects}}
+		</div>
+		{{/projectsBool}}
 		{{#languagesBool}}
 		<div id= "languages">
 			<h2><i class= "fa fa-language left"></i> LANGUAGES</h2>

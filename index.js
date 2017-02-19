@@ -6,7 +6,7 @@ var schema = require('resume-schema');
 var d = new Date();
 var curyear = d.getFullYear();
 
-var resumeObject = schema.resumeJson; 
+var resumeObject = schema.resumeJson;
 
 function render(resumeObject) {
 
@@ -31,6 +31,10 @@ resumeObject.basics.capitalLabel = (resumeObject.basics.label).toUpperCase();
 
 	if (resumeObject.basics.summary) {
 		resumeObject.aboutBool = true;
+	}
+
+	if (resumeObject.projects && resumeObject.projects[0]) {
+		resumeObject.projectsBool = true;
 	}
 
 	if (resumeObject.basics.profiles) {
@@ -83,7 +87,7 @@ resumeObject.basics.capitalLabel = (resumeObject.basics.label).toUpperCase();
 						case '09':
 							w.startDateMonth = "September ";
 							break;
-						case '10': 
+						case '10':
 							w.startDateMonth = "October ";
 							break;
 						case '11':
@@ -124,7 +128,7 @@ resumeObject.basics.capitalLabel = (resumeObject.basics.label).toUpperCase();
 						case '09':
 							w.endDateMonth = "September ";
 							break;
-						case '10': 
+						case '10':
 							w.endDateMonth = "October ";
 							break;
 						case '11':
@@ -134,7 +138,7 @@ resumeObject.basics.capitalLabel = (resumeObject.basics.label).toUpperCase();
 							w.endDateMonth = "December ";
 							break;
 						}
-				} else { 
+				} else {
 					w.endDateYear = 'Present'
 				}
 				if (w.highlights) {
@@ -190,7 +194,7 @@ resumeObject.basics.capitalLabel = (resumeObject.basics.label).toUpperCase();
 						case '09':
 							e.startDateMonth = "September ";
 							break;
-						case '10': 
+						case '10':
 							e.startDateMonth = "October ";
 							break;
 						case '11':
@@ -233,7 +237,7 @@ resumeObject.basics.capitalLabel = (resumeObject.basics.label).toUpperCase();
 						case '09':
 							e.endDateMonth = "September ";
 							break;
-						case '10': 
+						case '10':
 							e.endDateMonth = "October ";
 							break;
 						case '11':
@@ -246,7 +250,7 @@ resumeObject.basics.capitalLabel = (resumeObject.basics.label).toUpperCase();
 					if (e.endDateYear > curyear) {
 						e.endDateYear += " (expected)";
 					}
-				} else { 
+				} else {
 					e.endDateYear = 'Present'
 					e.endDateMonth = '';
 				}
@@ -295,7 +299,7 @@ resumeObject.basics.capitalLabel = (resumeObject.basics.label).toUpperCase();
 					case '09':
 						a.month = "September";
 						break;
-					case '10': 
+					case '10':
 						a.month = "October";
 						break;
 					case '11':
@@ -343,7 +347,7 @@ resumeObject.basics.capitalLabel = (resumeObject.basics.label).toUpperCase();
 					case '09':
 						a.month = "September";
 						break;
-					case '10': 
+					case '10':
 						a.month = "October";
 						break;
 					case '11':
@@ -390,7 +394,7 @@ resumeObject.basics.capitalLabel = (resumeObject.basics.label).toUpperCase();
 					case '09':
 						a.startDateMonth = "September ";
 						break;
-					case '10': 
+					case '10':
 						a.startDateMonth = "October ";
 						break;
 					case '11':
@@ -429,7 +433,7 @@ resumeObject.basics.capitalLabel = (resumeObject.basics.label).toUpperCase();
 					case '09':
 						a.endDateMonth = "September ";
 						break;
-					case '10': 
+					case '10':
 						a.endDateMonth = "October ";
 						break;
 					case '11':
@@ -476,7 +480,7 @@ resumeObject.basics.capitalLabel = (resumeObject.basics.label).toUpperCase();
 
 	var theme = fs.readFileSync(__dirname + '/resume.template', 'utf8');
 	var resumeHTML = Mustache.render(theme, resumeObject);
-	
+
 
 	return resumeHTML;
 };
